@@ -1,0 +1,1010 @@
+css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fffaf5;
+    color: #29231f;
+}
+
+header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    color: #e85d32;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #29231f;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #ffe5d0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #e85d32;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu, .cart, .reservation {
+    padding: 50px 7%;
+    text-align: center;
+}
+
+.menu h2, .cart h2, .reservation h2 {
+    margin-bottom: 25px;
+}
+
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.food-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000015;
+}
+
+.food-emoji {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.food-card h3, .food-card p {
+    margin-bottom: 15px;
+}
+
+.food-card p {
+    color: #e85d32;
+    font-weight: bold;
+}
+
+.cart {
+    background: #fff0df;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: white;
+    padding: 12px;
+    margin: 10px auto;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.cart h3 {
+    margin: 20px;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#order-message, #reservation-message {
+    margin-top: 15px;
+}
+
+footer {
+    background: #29231f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+/* Payment UI */
+
+.payment {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px #00000012;
+    text-align: left;
+}
+
+.payment h2 {
+    text-align: center;
+    color: #29231f;
+    margin-bottom: 10px;
+}
+
+.payment-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.payment-summary {
+    background: #fff0df;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.payment-summary h3 {
+    font-size: 30px;
+    color: #e85d32;
+    margin-top: 8px;
+}
+
+.payment-option {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.payment-option:has(input:checked) {
+    border: 2px solid #e85d32;
+    background: #fff8f3;
+}
+
+.payment-option input {
+    width: 18px;
+    height: 18px;
+    grid-row: span 2;
+    accent-color: #e85d32;
+}
+
+.payment-option span {
+    font-weight: bold;
+}
+
+.payment-option small {
+    grid-column: 2;
+    color: #777;
+}
+
+.payment-fields {
+    margin: 20px 0;
+}
+
+.payment-fields label {
+    display: block;
+    margin: 12px 0 7px;
+    font-weight: bold;
+}
+
+.payment-fields input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin-bottom: 8px;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.payment-btn,
+.cancel-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.cancel-btn {
+    background: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#payment-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .payment {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+}
+
+/* Order Success Card */
+.success-card {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 25px #00000015;
+    border: 1px solid #e5f5e9;
+}
+
+.success-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    background: #e3f8e8;
+    color: #219653;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+.success-card h2 {
+    color: #219653;
+    margin-bottom: 10px;
+}
+
+.success-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.success-details {
+    background: #f7f9f7;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.success-details p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.success-card button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #219653;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 35px 15px;
+        text-align: center;
+    }
+
+    #food-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .food-card {
+        padding: 12px;
+    }
+
+    .food-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .cart,
+    .reservation {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .payment,
+    .success-card {
+        width: auto;
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .card-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #food-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .payment,
+    .success-card {
+        padding: 16px;
+    }
+}
+
+/* DineDesk Premium Theme */
+body {
+    background-color: #fffaf3;
+    color: #352820;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: #352820;
+}
+
+button, .btn {
+    background-color: #e87532;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #c95720;
+    transform: translateY(-2px);
+}
+
+.food-card {
+    background: #ffffff;
+    border: 1px solid #f1e4d7;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px #6b3b1a12;
+    overflow: hidden;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #6b3b1a20;
+}
+
+/* Real food photos */
+
+.food-image {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+
+.food-card {
+    padding: 16px;
+}
+
+@media (max-width: 480px) {
+    .food-image {
+        height: 170px;
+    }
+}
+
+/* Premium DineDesk Food Cards */
+#food-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.food-card {
+    background: #ffffff;
+    border: 1px solid #f3e5d7;
+    border-radius: 18px;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(88, 53, 30, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(88, 53, 30, 0.15);
+}
+
+.food-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.food-card h3 {
+    font-size: 19px;
+    margin: 14px 0 8px;
+    color: #352820;
+}
+
+.food-card p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #df682d;
+}
+
+.food-card .btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    #food-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 12px;
+    }
+
+    .food-image {
+        height: 160px;
+    }
+}
+
+@media (max-width: 420px) {
+    #food-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* DineDesk Premium Header */
+header {
+    background: #fffaf3;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #f0e1d2;
+    box-shadow: 0 3px 15px rgba(70, 42, 20, 0.05);
+}
+
+header h1 {
+    color: #e87532;
+    font-size: 30px;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+nav a {
+    color: #44352b;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #e87532;
+}
+
+/* Premium Hero Section */
+.hero {
+    background: linear-gradient(120deg, #fff0df, #fffaf3);
+    padding: 70px 25px;
+    text-align: center;
+    border-radius: 0 0 28px 28px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 18px;
+    color: #352820;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: #756356;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 18px 12px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* Premium Cart */
+.cart {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #f0e1d2;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(70, 42, 20, 0.07);
+}
+
+.cart h2,
+.reservation h2 {
+    color: #352820;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1e7de;
+}
+
+.cart-item button {
+    background: #fff0df;
+    color: #c95720;
+    padding: 8px 14px;
+}
+
+.cart-item button:hover {
+    background: #ffe0c2;
+}
+
+#total {
+    color: #df682d;
+    font-weight: 700;
+}
+
+/* Premium Reservation */
+.reservation {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #f0e1d2;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(70, 42, 20, 0.07);
+}
+
+.reservation input,
+.reservation select,
+.reservation textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    margin: 8px 0 16px;
+    border: 1px solid #e4d5c8;
+    border-radius: 9px;
+    background: #fffdf9;
+    font: inherit;
+}
+
+.reservation input:focus,
+.reservation select:focus,
+.reservation textarea:focus {
+    outline: 2px solid #f4b183;
+    border-color: #e87532;
+}
+
+#reservation-message {
+    color: #23834d;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* DineDesk Footer */
+footer {
+    background: #352820;
+    color: #fffaf3;
+    text-align: center;
+    padding: 28px 16px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 6px 0;
+    line-height: 1.7;
+    color: #f4e5d8;
+}
+
+footer a {
+    color: #ffb77f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+/* Consistent section spacing */
+#menu,
+#cart,
+#reservation,
+#payment {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Image fallback background */
+.food-image {
+    background: #fff0df;
+}
+
+/* Buttons keyboard accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #e87532;
+    outline-offset: 3px;
+}
+.footer-icon {
+    font-size: 38px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-name {
+    display: inline-block;
+    color: #fffaf3;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer-icon {
+    display: inline-block;
+    font-size: 38px;
+    vertical-align: middle;
+}
+
+.hero {
+    background:
+        linear-gradient(
+            rgba(255, 240, 223, 0.88),
+            rgba(255, 250, 243, 0.92)
+        ),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 25px;
+    text-align: center;
+    border-radius: 0 0 28px 28px;
+}
+
+.food-card .btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    background: #e87532;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.food-card .btn:hover {
+    background: #c95720;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(201, 87, 32, 0.2);
+}
+
+.food-card:hover .food-image {
+    transform: scale(1.04);
+}
+
+.food-card {
+    overflow: hidden;
+}
+
+.food-image {
+    transition: transform 0.4s ease;
+}
+
+/* Professional Food Search Bar */
+#food-search {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+    margin: 25px auto 35px;
+    padding: 16px 22px 16px 52px;
+
+    font-size: 16px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #352820;
+
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23e87532' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 21px;
+
+    border: 1px solid #ead9c9;
+    border-radius: 14px;
+    outline: none;
+
+    box-shadow: 0 5px 18px rgba(88, 53, 30, 0.07);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#food-search::placeholder {
+    color: #a39589;
+}
+
+#food-search:focus {
+    border-color: #e87532;
+    box-shadow: 0 0 0 4px rgba(232, 117, 50, 0.12);
+}
+
+@media (max-width: 600px) {
+    #food-search {
+        width: calc(100% - 30px);
+        padding: 14px 16px 14px 46px;
+        background-position: 15px center;
+        font-size: 15px;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero h1,
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    #food-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 12px;
+    }
+
+    .food-image {
+        height: 160px;
+    }
+
+    .cart,
+    .reservation {
+        width: auto;
+        margin: 20px 12px;
+        padding: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    #food-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+
+.site-footer {
+    background: #352820;
+    color: #fffaf3;
+    text-align: center;
+    padding: 40px 20px 25px;
+    margin-top: 50px;
+}
+
+.site-footer h2 {
+    margin: 0 0 12px;
+}
+
+.footer-tagline {
+    color: #ffb77f;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 22px 0;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #ffb77f;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-contact {
+    margin: 25px 0;
+}
+
+.footer-contact h3 {
+    color: #ffffff;
+}
+
+.footer-copy {
+    border-top: 1px solid #655247;
+    padding-top: 18px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #ffb77f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-contact a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 22px;
+    background: #e87532;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    background: #c95720;
+}
